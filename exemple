@@ -1,0 +1,64 @@
+from jvc import *
+
+client = JVC("Votre cookie coniunctio ici")
+
+client.createTopic(
+    "http://www.jeuxvideo.com/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm",
+    "Je poste depuis mon api",
+    "et toi ? :)"
+)
+
+
+
+
+from jvc import *
+
+client = JVC("Votre cookie coniunctio ici")
+
+client.postTopic(
+    "http://www.jeuxvideo.com/forums/42-51-63086620-1-0-1-0-dessin-mon-dessin-10.htm",
+    "Je réponds au topic, et toi ? :)"
+)
+
+
+
+
+from jvc import *
+
+Photo = NoelShack("ma_bite.png")
+
+
+
+
+
+
+
+from jvc import *
+
+
+Listener = ForumListener("http://www.jeuxvideo.com/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm")
+
+while True:
+
+    if Listener.newTopics():
+
+        print(Listener.newTopic.get("topic_title"))
+
+
+
+
+
+
+
+
+from jvc import *
+
+
+Listener = TopicListener("http://www.jeuxvideo.com/forums/42-51-63116533-1-0-1-0-complique-d-avoir-une-copine-dans-mon-cas.htm")
+
+while True:
+
+    if Listener.newPosts():
+
+        print(Listener.newPost.get("post_author") + " à écrit : ")
+        print("'" + Listener.newPost.get("post_message") + "'")
